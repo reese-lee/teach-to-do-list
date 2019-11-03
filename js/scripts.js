@@ -46,3 +46,5 @@ Task.prototype.markDone = function(id) {
 
 
 // UI logic 
+let toDoList = new ToDoList();
+
