@@ -61,20 +61,20 @@ $(document).ready(function() {
     $("form#new-task").submit(function(event){
         event.preventDefault();
         let inputtedTaskName = $("input#new-task").val();
-
-        let newTask = new Task(inputtedTaskName, isDone);
+        
+        let newTask = new Task(inputtedTaskName);
         toDoList.addTask(newTask);
         displayListDetails(toDoList);
+        console.log(newTask);
+
+
     });
 
     let d = new Date();
     let month = d.getMonth()+1;
     let day = d.getDate();
 
-    let output = d.getFullYear() + '/' +
-        (month<10 ? '0' : '') + month + '/' +
-        (day<10 ? '0' : '') + day;
-        console.log(output);
+    let output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' +  d.getFullYear();
     
     $("#currentDate").html(output);
 })
