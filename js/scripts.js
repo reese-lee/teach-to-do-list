@@ -4,17 +4,17 @@ function ToDoList() {
     this.currentId = 0;
 }
 
-ToDoList.prototype.addTask(task) {
+ToDoList.prototype.addTask = function(task) {
     task.id = this.assignId();
     this.tasks.push(task);
 }
 
-ToDoList.prototype.assignId() {
+ToDoList.prototype.assignId = function(id) {
     this.currentId += 1;
     return this.currentId;
 }
 
-ToDoList.prototype.deleteTask(id) {
+ToDoList.prototype.deleteTask = function(id) {
     for(let i = 0; i < this.tasks.length; i++) {
         if(this.tasks[i]) {
             if(this.tasks[i].id == id) {
