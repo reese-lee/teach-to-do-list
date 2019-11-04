@@ -71,8 +71,19 @@ $(document).ready(function() {
         items.forEach(item => {
             item.addEventListener('click', e => {
                 e.target.style.textDecoration = 'line-through';
+                // to remove an item completely:
+                // e.target.remove();
             });
         });
+
+        // alternatively, utilizing event bubbling and delegation:
+        
+        // const ul = document.querySelector('ul');
+        // ul.addEventListener('click', e => {
+        //     if(e.target.tagName === 'LI'){
+        //         e.target.remove();
+        //     };
+        // });
         
     });
 
